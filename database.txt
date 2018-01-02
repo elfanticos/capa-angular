@@ -1,0 +1,9 @@
+CREATE TABLE personas(
+	id SERIAL,
+	nombre_pers CHARACTER VARYING(30),
+    ape_mater   CHARACTER VARYING(30),
+    ape_pater   CHARACTER VARYING(30),
+    nro_doc     INTEGER,
+    fecha_nac   TIMESTAMP WITHOUT TIME ZONE,
+    CONSTRAINT pk_persona PRIMARY KEY(id)
+);

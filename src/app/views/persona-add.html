@@ -1,0 +1,15 @@
+<h3>{{titulo}}</h3>
+<form #formPersona="ngForm" (ngSubmit)="insertarPersona()" class="col-lg-6" id="form-persona">
+	<label for="nombre"> Nombre:</label>
+	<input type="text"  name="nombre" class="form-control" #nombre [(ngModel)]="persona.nombre_pers" />
+	<label for="ape_mater"> Apellido paterno:</label>
+	<input type="text"  name="ape_pater" class="form-control" #ape_pater [(ngModel)]="persona.ape_pater" />
+	<label for="ape_mater"> Apellido materno:</label>
+	<input type="text"  name="ape_mater" class="form-control" #ape_mater [(ngModel)]="persona.ape_mater"/>
+	<label for="ape_mater"> Nro documento:</label>
+	<input type="text"  name="nro_doc" class="form-control" #nro_doc [(ngModel)]="persona.nro_doc" />
+	<label for="ape_mater"> Fecha nacimiento:</label>
+	<input type="text"  name="fecha_nac" class="form-control" #fecha_nac [(ngModel)]="persona.fecha_nac"/>
+	<br>
+	<input type="submit" class="btn btn-success" value="Insertar"/>
+</form>
