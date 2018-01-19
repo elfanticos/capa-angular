@@ -14,7 +14,8 @@ export class PersonaService{
 	}
 
 	getPersonas() {
-		return this._http.get(this.url).map(res => res.json());
+		let headers = new Headers({'Content-Type' : 'application/json'});
+		return this._http.post(this.url+'getListadoPersonas',null,{headers:headers}).map(res => res.json());
 	}
 
 	insertarPersona(persona:Persona) {
@@ -26,7 +27,10 @@ export class PersonaService{
  	}
 
  	getPersona(id) {
-		return this._http.get(this.url+'find/'+id).map(res => res.json());
+		let params = JSON.stringify({"id":id});
+		 let headers = new Headers({'Content-Type':'application/json'});
+		return this._http.post(this.url+'getPersona',params , {headers: headers})
+		             .map(res => res.json());
 	}
 
 	editPersona(id,persona:Persona) {

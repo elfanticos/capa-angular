@@ -28,7 +28,7 @@ export class PersonaEditComponent{
 			this._personaService.getPersona(id).subscribe(
 				response => {
 					if(response.code == 200) {
-						this.persona = response.response;
+						// this.persona = response.response;
 					}else {
 						this._router.navigate(['/personas-list']);
 					}

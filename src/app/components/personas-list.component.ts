@@ -29,7 +29,7 @@ export class PersonasListComponent{
 				if(result.code != 200) {
 					console.log(result);
 				}else {
-					this.personas = result.response;
+					this.personas = result.data;
 				}
 			},error => {
 				console.log(<any>error);
