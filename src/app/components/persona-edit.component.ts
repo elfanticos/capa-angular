@@ -27,8 +27,9 @@ export class PersonaEditComponent{
 			let id = params['id'];
 			this._personaService.getPersona(id).subscribe(
 				response => {
-					if(response.code == 200) {
-						// this.persona = response.response;
+					let result = response.data;
+					if(result.code == 200) {
+						this.persona = result.data[0];
 					}else {
 						this._router.navigate(['/personas-list']);
 					}
@@ -42,10 +43,10 @@ export class PersonaEditComponent{
 
 	insertarPersona() {
 		this._route.params.forEach((params: Params) => {
-			let id = params['id'];
-			this._personaService.editPersona(id,this.persona).subscribe(
+			this._personaService.editPersona(this.persona).subscribe(
 				result => {
-					if(result.code == 200) {
+					let response = result.data;
+					if(response.code == 200) {
 						this._router.navigate(['/personas-list']);
 					}else {
 						console.log(result);

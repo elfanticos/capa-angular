@@ -33,15 +33,17 @@ export class PersonaService{
 		             .map(res => res.json());
 	}
 
-	editPersona(id,persona:Persona) {
-		let json    = JSON.stringify(persona);
-		let params  = 'json='+json;
-		let headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
-		return this._http.post(this.url+'actualizarPersona/'+id,params,{headers:headers}).
+	editPersona(persona:Persona) {
+		let params    = JSON.stringify(persona);
+		let headers = new Headers({'Content-Type':'application/json'});
+		return this._http.post(this.url+'editPersona',params,{headers:headers}).
 					map(res => res.json());
 	}
 
 	deletePersona(id) {
-		return this._http.get(this.url+'eliminarProducto/'+id).map(res => res.json());
+		let params = JSON.stringify({"id":id});
+		let headers = new Headers({'Content-Type':'application/json'});
+		return this._http.post(this.url+'deletePersona',params,{headers:headers}).
+					map(res => res.json());
 	}
 }

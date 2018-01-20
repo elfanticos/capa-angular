@@ -3,6 +3,7 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 import {PersonaService}                 from '../services/persona.service';
 import {Persona}                        from '../models/persona';
 import {GLOBAL}							from '../services/global';
+import { Response } from '@angular/http/src/static_response';
 
 @Component({
 	selector    : 'personas-list',
@@ -39,12 +40,13 @@ export class PersonasListComponent{
 
 
 	onDeletePersona(id) {
-		// this.user=id;
-		// this._personaService.deletePersona(this.user).subscribe(
-		// 	response => {
-		// 		if(response.code == 200) {
+		// var id = id;
+		// this._personaService.deletePersona(id).subscribe(
+		// 	result => {
+		// 		if(result.code != 200) {
+		// 			console.log(result);
 		// 		}else {
-		// 			console.log('error al borrar el registro');
+		// 			this.personas = result.data;
 		// 		}
 		// 	},error => {
 		// 		console.log(<any>error);
