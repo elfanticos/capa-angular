@@ -19,10 +19,9 @@ export class PersonaService{
 	}
 
 	insertarPersona(persona:Persona) {
-		let json    = JSON.stringify(persona);
-		let params  = 'json='+json;
-		let headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
-		return this._http.post(this.url+'insertarPersona',params, {headers: headers})
+		let params    = JSON.stringify(persona);
+		let headers = new Headers({'Content-Type':'application/json'});
+		return this._http.post(this.url+'insertPersona',params, {headers: headers})
 							.map(res => res.json());
  	}
 

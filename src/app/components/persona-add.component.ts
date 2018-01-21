@@ -21,7 +21,7 @@ export class PersonaAddComponent{
 	insertarPersona() {
 		this._personaService.insertarPersona(this.persona).subscribe(
 			result => {
-				if(result.code == 200) {
+				if(result.data.code == 200) {
 					console.log(result.response);
 					this._router.navigate(['/personas-list']);
 				}else {

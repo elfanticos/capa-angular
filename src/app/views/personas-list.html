@@ -5,7 +5,7 @@
 		<tr>
 			<th class="text-left">Nombre</th>
 			<th class="text-left">Apellido p.</th>
-			<th class="text-left">Apellido n.</th>
+			<th class="text-left">Apellido m.</th>
 			<th class="text-left">Nro documento</th>
 			<th class="text-left">Fecha nac.</th>
 			<th class="text-left">Acciones</th>
@@ -13,10 +13,10 @@
 	</thead>
 	<tbody *ngFor="let persona of personas">
 		<tr>
-			<td class="text-left">{{persona.id}}</td>
 			<td class="text-left">{{persona.nombre_pers}}</td>
 			<td class="text-left">{{persona.ape_pater}}</td>
 			<td class="text-left">{{persona.ape_mater}}</td>
+			<td class="text-left">{{persona.nro_doc}}</td>
 			<td class="text-left">{{persona.fecha_nac}}</td>
 			<td class="text-left">
 				<a class="btn btn-primary btn-sm" [routerLink]="['/persona-edit',persona.id]">Editar</a>

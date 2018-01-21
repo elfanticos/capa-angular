@@ -40,17 +40,16 @@ export class PersonasListComponent{
 
 
 	onDeletePersona(id) {
-		// var id = id;
-		// this._personaService.deletePersona(id).subscribe(
-		// 	result => {
-		// 		if(result.code != 200) {
-		// 			console.log(result);
-		// 		}else {
-		// 			this.personas = result.data;
-		// 		}
-		// 	},error => {
-		// 		console.log(<any>error);
-		// 	}
-		// );
+		this._personaService.deletePersona(id).subscribe(
+			result => {
+				if(result.data.code != 200) {
+					console.log(result);
+				}else {
+					this.getPersonas();
+				}
+			},error => {
+				console.log(<any>error);
+			}
+		);
 	}
 }
